@@ -1,0 +1,14 @@
+{
+    "routers": [
+        {
+            "hostname": "R1",
+            "IP": "192.168.1.1",
+            "Interface": "Eth0"
+        },
+        {
+            "hostname": "R2",
+            "IP": "192.168.1.100",
+            "Interface": "Eth1"
+        }
+    ]
+}

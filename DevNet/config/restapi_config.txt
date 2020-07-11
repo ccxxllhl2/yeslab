@@ -1,0 +1,234 @@
+Building configuration...
+
+Current configuration : 5538 bytes
+!
+version 12.2
+no service pad
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname Branch-Access1
+!
+boot-start-marker
+boot-end-marker
+!
+enable password xxxxxxxx
+!
+username xxxxxx
+!
+!
+no aaa new-model
+switch 1 provision ws-c2960s-48lps-l
+!
+!
+no ip domain-lookup
+ip device tracking
+!
+!
+crytpo pki xxxxxxx
+ enrollment selfsigned
+certificate xxxxxxxxx
+ revocation-check none
+rsakeypair TP-self-signed- xxxxxxxx
+!
+!
+certificate xxxxxxxxx
+certificate xxxxxxxxx
+xxxx  xxxxx  xxxx  xxxx  xxxx
+xxxx  xxxxx  xxxx  xxxx  xxxx
+xxxx  xxxxx  xxxx  xxxx  xxxx
+xxxx  xxxxx  xxxx  xxxx  xxxx
+xxxx  xxxxx  xxxx  xxxx  xxxx
+xxxx  xxxxx  xxxx  xxxx  xxxx
+xxxx  xxxxx  xxxx  xxxx  xxxx
+xxxx  xxxxx  xxxx  xxxx  xxxx
+xxxx  xxxxx  xxxx  xxxx  xxxx
+xxxx  xxxxx  xxxx  xxxx  xxxx
+xxxx  xxxxx  xxxx  xxxx  xxxx
+xxxx  xxxxx  xxxx  xxxx  xxxx
+xxxx  xxxxx  xxxx  xxxx  xxxx
+xxxx  xxxxx  xxxx  xxxx  xxxx
+xxxx  xxxxx  xxxx  xxxx  xxxx
+xxxx  xxxxx  xxxx  xxxx  xxxx
+xxxx  xxxxx  xxxx  xxxx  xxxx
+xxxx  xxxxx  xxxx  xxxx  xxxx
+xxxx  xxxxx  xxxx  xxxx  xxxx
+quit
+archive
+ log config
+  logging enable
+  logging size 500
+  notify syslog contenttype plaintext
+  hidekeys
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+!
+!
+!
+vlan internal allocation policy ascending
+!
+!
+!
+interface FastEthernet0
+ no ip address
+ shutdown
+!
+interface GigabitEthernet1/0/1
+ switchport access vlan 200
+ switchport mode access
+!
+interface GigabitEthernet1/0/2
+ switchport access vlan 200
+ switchport mode access
+!
+interface GigabitEthernet1/0/3
+!
+interface GigabitEthernet1/0/4
+!
+interface GigabitEthernet1/0/5
+!
+interface GigabitEthernet1/0/6
+!
+interface GigabitEthernet1/0/7
+!
+interface GigabitEthernet1/0/8
+!
+interface GigabitEthernet1/0/9
+!
+interface GigabitEthernet1/0/10
+!
+interface GigabitEthernet1/0/11
+!
+interface GigabitEthernet1/0/12
+!
+interface GigabitEthernet1/0/13
+!
+interface GigabitEthernet1/0/14
+!
+interface GigabitEthernet1/0/15
+!
+interface GigabitEthernet1/0/16
+!
+interface GigabitEthernet1/0/17
+!
+interface GigabitEthernet1/0/18
+!
+interface GigabitEthernet1/0/19
+!
+interface GigabitEthernet1/0/20
+!
+interface GigabitEthernet1/0/21
+!
+interface GigabitEthernet1/0/22
+!
+interface GigabitEthernet1/0/23
+!
+interface GigabitEthernet1/0/24
+!
+interface GigabitEthernet1/0/25
+!
+interface GigabitEthernet1/0/26
+!
+interface GigabitEthernet1/0/27
+!
+interface GigabitEthernet1/0/28
+!
+interface GigabitEthernet1/0/29
+!
+interface GigabitEthernet1/0/30
+!
+interface GigabitEthernet1/0/31
+!
+interface GigabitEthernet1/0/32
+!
+interface GigabitEthernet1/0/33
+!
+interface GigabitEthernet1/0/34
+!
+interface GigabitEthernet1/0/35
+!
+interface GigabitEthernet1/0/36
+!
+interface GigabitEthernet1/0/37
+!
+interface GigabitEthernet1/0/38
+!
+interface GigabitEthernet1/0/39
+!
+interface GigabitEthernet1/0/40
+!
+interface GigabitEthernet1/0/41
+!
+interface GigabitEthernet1/0/42
+!
+interface GigabitEthernet1/0/43
+!
+interface GigabitEthernet1/0/44
+!
+interface GigabitEthernet1/0/45
+!
+interface GigabitEthernet1/0/46
+!
+interface GigabitEthernet1/0/47
+ switchport access vlan 200
+ switchport mode access
+ ip device tracking maximum 10
+!
+interface GigabitEthernet1/0/48
+ ip device tracking maximum 10
+ shutdown
+!
+interface GigabitEthernet1/0/49
+!
+interface GigabitEthernet1/0/50
+!
+interface GigabitEthernet1/0/51
+!
+interface GigabitEthernet1/0/52
+!
+interface Vlan1
+ no ip address
+!
+interface Vlan200
+ ip address 10.2.1.17 255.255.255.0
+!
+ip default-gateway 10.2.1.20
+ip http server
+ip http secure-server
+!
+ip access-list extended APIC_EM-FLOW_ANALYSIS_ACL
+ip sla enable reaction-alerts
+snmp-server xxxxxxxx
+snmp-server xxxxxxxx
+snmp-server xxxxxxxx
+snmp-server xxxxxxxx
+snmp-server xxxxxxxx
+snmp-server xxxxxxxx
+snmp-server xxxxxxxx
+snmp-server xxxxxxxx
+snmp-server xxxxxxxx
+snmp-server xxxxxxxx
+snmp-server xxxxxxxx
+alias qospolicymap prm-APIC_QOS_IN QPM
+alias exec QPM show policy-map prm-APIC_QOS_IN
+alias exec policy show run | incl policy
+alias exec dscp show run | incl prm-APIC_QOS_IN#BROADCAST|dscponly|cs5
+alias exec IT show run | incl prm-APIC_QOS_IN#OAM|IT-Staff__ssh|55.55.55.0|set dscp cs2
+!
+line con 0
+ exec-timeout 0 0
+ stopbits 1
+line vty 0 4
+ exec-timeout 0 0
+password xxxxxxxx
+login xxxxxx
+ transport input telnet
+line vty 5 15
+ exec-timeout 0 0
+password xxxxxxxx
+login xxxxxx
+ transport input telnet
+!
+end

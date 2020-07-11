@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+<rpc-reply message-id="urn:uuid:3c967406-e62c-4447-a25e-92fb2429bed5" xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0" xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+ <data>
+  <aaa xmlns="http://cisco.com/ns/yang/Cisco-IOS-XR-aaa-lib-cfg">
+   <usernames xmlns="http://cisco.com/ns/yang/Cisco-IOS-XR-aaa-locald-cfg">
+    <username>
+     <name>net</name>
+     <password>06080A35</password>
+    </username>
+    <username>
+     <name>tea</name>
+     <password>01070305</password>
+    </username>
+	<username>
+     <name>tea2</name>
+     <password>01070305</password>
+    </username>
+   </usernames>
+  </aaa>
+  <aaa xmlns="http://cisco.com/ns/yang/Cisco-IOS-XR-aaa-locald-admin-cfg">
+   <usernames>
+    <username>
+     <name>test</name>
+     <usergroup-under-usernames>
+      <usergroup-under-username>
+       <name>root-system</name>
+      </usergroup-under-username>
+     </usergroup-under-usernames>
+     <secret>$1$9.2E$ZfCsCgp9Rvc9flNvGN1Yc/</secret>
+    </username>
+   </usernames>
+  </aaa>
+  <crypto xmlns="http://cisco.com/ns/yang/Cisco-IOS-XR-crypto-sam-cfg">
+   <ssh xmlns="http://cisco.com/ns/yang/Cisco-IOS-XR-crypto-ssh-cfg">
+    <server>
+     <v2></v2>
+     <netconf-vrf-table>
+      <vrf>
+       <vrf-name>default</vrf-name>
+       <enable></enable>
+      </vrf>
+     </netconf-vrf-table>
+    </server>
+   </ssh>
+  </crypto>
+  <interface-configurations xmlns="http://cisco.com/ns/yang/Cisco-IOS-XR-ifmgr-cfg">
+   <interface-configuration>
+    <active>act</active>
+    <interface-name>MgmtEth0/0/CPU0/0</interface-name>
+    <shutdown></shutdown>
+   </interface-configuration>
+   <interface-configuration>
+    <active>act</active>
+    <interface-name>GigabitEthernet0/0/0/0</interface-name>
+    <ipv4-network xmlns="http://cisco.com/ns/yang/Cisco-IOS-XR-ipv4-io-cfg">
+     <addresses>
+      <primary>
+       <address>192.168.50.180</address>
+       <netmask>255.255.255.0</netmask>
+      </primary>
+     </addresses>
+    </ipv4-network>
+   </interface-configuration>
+   <interface-configuration>
+    <active>act</active>
+    <interface-name>GigabitEthernet0/0/0/1</interface-name>
+    <shutdown></shutdown>
+   </interface-configuration>
+   <interface-configuration>
+    <active>act</active>
+    <interface-name>GigabitEthernet0/0/0/2</interface-name>
+    <shutdown></shutdown>
+   </interface-configuration>
+  </interface-configurations>
+  <ip-domain xmlns="http://cisco.com/ns/yang/Cisco-IOS-XR-ip-domain-cfg">
+   <vrfs>
+    <vrf>
+     <vrf-name>default</vrf-name>
+     <name>yeslab.net</name>
+    </vrf>
+   </vrfs>
+  </ip-domain>
+  <ip xmlns="http://cisco.com/ns/yang/Cisco-IOS-XR-ip-tcp-cfg">
+   <cinetd>
+    <services>
+     <vrfs>
+      <vrf>
+       <vrf-name>default</vrf-name>
+       <ipv4>
+        <telnet>
+         <tcp>
+          <maximum-server>10</maximum-server>
+         </tcp>
+        </telnet>
+       </ipv4>
+      </vrf>
+     </vrfs>
+    </services>
+   </cinetd>
+  </ip>
+  <netconf-yang xmlns="http://cisco.com/ns/yang/Cisco-IOS-XR-man-netconf-cfg">
+   <agent>
+    <ssh>
+     <enable></enable>
+    </ssh>
+   </agent>
+  </netconf-yang>
+  <netconf xmlns="http://cisco.com/ns/yang/Cisco-IOS-XR-man-xml-ttyagent-cfg">
+   <agent>
+    <tty>
+     <enable></enable>
+    </tty>
+   </agent>
+  </netconf>
+  <interfaces xmlns="http://openconfig.net/yang/interfaces">
+   <interface>
+    <name>MgmtEth0/0/CPU0/0</name>
+    <config>
+     <name>MgmtEth0/0/CPU0/0</name>
+     <type>ethernetCsmacd</type>
+     <enabled>false</enabled>
+    </config>
+   </interface>
+   <interface>
+    <name>GigabitEthernet0/0/0/0</name>
+    <config>
+     <name>GigabitEthernet0/0/0/0</name>
+     <type>ethernetCsmacd</type>
+     <enabled>true</enabled>
+    </config>
+   </interface>
+   <interface>
+    <name>GigabitEthernet0/0/0/1</name>
+    <config>
+     <name>GigabitEthernet0/0/0/1</name>
+     <type>ethernetCsmacd</type>
+     <enabled>false</enabled>
+    </config>
+   </interface>
+   <interface>
+    <name>GigabitEthernet0/0/0/2</name>
+    <config>
+     <name>GigabitEthernet0/0/0/2</name>
+     <type>ethernetCsmacd</type>
+     <enabled>false</enabled>
+    </config>
+   </interface>
+  </interfaces>
+ </data>
+</rpc-reply>

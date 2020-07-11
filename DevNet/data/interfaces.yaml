@@ -1,0 +1,7 @@
+interfaces:
+    - interface: ge-0/0/0
+      inet address: 10.1.1.1/30
+    - interface: ge-0/0/1
+      inet address: 10.1.1.5/30
+    - interface: ge-0/0/2
+      inet address: 10.1.1.9/30
